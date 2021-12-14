@@ -3,14 +3,24 @@ package com.Project.backend.resources;
 import java.util.ArrayList;
 import org.apache.commons.math3.distribution.LaplaceDistribution;
 
-public class NumericResult extends Result {
+public class NumericResult {
+
+    public ArrayList<Double> content;
 
     public NumericResult() {
 
     }
 
     public NumericResult(ArrayList<Double> content) {
-        this.content = new ArrayList<>(content);
+        this.content = new ArrayList<Double>(content);
+    }
+
+    public ArrayList getContent() {
+        return this.content;
+    }
+
+    void setContent(ArrayList content) {
+        this.content = content;
     }
 
     public ArrayList<Double> addLaplaceNoise(double sensitivity, double epsilon) {
