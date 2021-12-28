@@ -10,6 +10,8 @@ public class HeartDiseaseService {
 
     @Autowired
     public HeartDiseaseService(HeartDiseaseRepository heartDiseaseRepository){this.heartDiseaseRepository = heartDiseaseRepository;}
-
+    public Integer avgAge(){
+        return heartDiseaseRepository.findAgeAverage();
+    }
 
 }
