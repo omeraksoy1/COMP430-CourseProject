@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface HeartDiseaseRepository extends JpaRepository<heartDisease, Integer> {
-    @Query("SELECT AVERAGE(age) FROM heartDisease")
-    Integer findAgeAverage();
+    @Query(value="SELECT AVG(age) FROM heartdisease",nativeQuery = true)
+    public Integer findAgeAverage();
 }
