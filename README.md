@@ -1,8 +1,8 @@
-#COMP430-CourseProject
+# COMP430-CourseProject
 This repository contains the source code of our course project
 for the Data Privacy and Security course (COMP430).
 
-###Backend
+### Backend
 
 The backend of the project is coded in Java with Spring Boot. It also requires a local 
 instance of MySQL to be running on the same host at port 3307, and a database with the name 
