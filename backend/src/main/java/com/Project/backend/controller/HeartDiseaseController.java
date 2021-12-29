@@ -4,6 +4,7 @@ import com.Project.backend.service.HeartDiseaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController // This means that this class is a Controller
 @RequestMapping("/api")
 public class HeartDiseaseController {
