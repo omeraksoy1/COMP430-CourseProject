@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 })
 export class ButtonComponent implements OnInit {
   private url: string;
+  public result:any;
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:8080/api/average-age';
   }
@@ -17,6 +18,7 @@ export class ButtonComponent implements OnInit {
       getAll() {
           this.http.get(this.url).subscribe((results) => {
             console.log('Data is received - Result - ', results);
+            this.result = results;
           })
       }
 
