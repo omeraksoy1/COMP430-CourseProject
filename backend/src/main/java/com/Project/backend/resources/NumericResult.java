@@ -17,11 +17,11 @@ public class NumericResult {
         this.content = new ArrayList<Double>(content);
     }
 
-    public ArrayList getContent() {
+    public ArrayList<Double> getContent() {
         return this.content;
     }
 
-    void setContent(ArrayList content) {
+    public void setContent(ArrayList content) {
         this.content = content;
     }
 

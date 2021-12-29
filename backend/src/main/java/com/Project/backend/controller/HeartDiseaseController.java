@@ -11,12 +11,12 @@ public class HeartDiseaseController {
     @Autowired
     private HeartDiseaseService heartDiseaseService;
 
-    @RequestMapping(value = "/avg", method = RequestMethod.GET)
-    public Integer getAverage (){
+    @RequestMapping(value = "/average-age", method = RequestMethod.GET)
+    public Double getAverage (){
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
-        return heartDiseaseService.avgAge();
+        return heartDiseaseService.averageAge();
     }
 }
 

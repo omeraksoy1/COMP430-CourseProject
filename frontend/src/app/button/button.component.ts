@@ -10,7 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 export class ButtonComponent implements OnInit {
   private url: string;
   constructor(private http: HttpClient) {
-    this.url = 'http://localhost:8080/api/avg';
+    this.url = 'http://localhost:8080/api/average-age';
   }
 
 
