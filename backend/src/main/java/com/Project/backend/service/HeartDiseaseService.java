@@ -59,7 +59,7 @@ public class HeartDiseaseService {
         res.addLaplaceNoise(1.0, 1.0);
         res.round(2);
 
-        HashMap<String, Double> finalResult = new HashMap<String, Double>();
+        HashMap<String, Double> finalResult = new HashMap<>();
         for (int j = 0; j < values.size(); j++) {
             finalResult.put(types.get(j), res.getContent().get(j));
         }
@@ -83,7 +83,31 @@ public class HeartDiseaseService {
         res.addLaplaceNoise(1.0, 1.0);
         res.round(2);
 
-        HashMap<String, Double> finalResult = new HashMap<String, Double>();
+        HashMap<String, Double> finalResult = new HashMap<>();
+        for (int j = 0; j < counts.size(); j++) {
+            finalResult.put(ranges.get(j), res.getContent().get(j));
+        }
+
+        return finalResult;
+    }
+
+    public HashMap<String, Double> getBPGroupsByHDPositive() {
+        NumericResult res = new NumericResult();
+        ArrayList<String[]> result;
+        ArrayList<String> ranges = new ArrayList<>();
+        ArrayList<Double> counts = new ArrayList<>();
+        result = heartDiseaseRepository.getBPGroupsByHDPositive();
+
+        for (String[] strings : result) {
+            ranges.add(strings[0]);
+            counts.add(Double.parseDouble(strings[1]));
+        }
+
+        res.setContent(counts);
+        res.addLaplaceNoise(1.0, 1.0);
+        res.round(2);
+
+        HashMap<String, Double> finalResult = new HashMap<>();
         for (int j = 0; j < counts.size(); j++) {
             finalResult.put(ranges.get(j), res.getContent().get(j));
         }

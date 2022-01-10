@@ -23,4 +23,7 @@ public interface HeartDiseaseRepository extends JpaRepository<heartDisease, Inte
 
     @Query(value = HeartDiseaseQueries.AgeGroupsByHDPositiveQuery, nativeQuery = true)
     ArrayList<String[]> getAgeGroupsByHDPositive();
+
+    @Query(value = HeartDiseaseQueries.BPGroupByHDPositiveQuery , nativeQuery = true)
+    ArrayList<String[]> getBPGroupsByHDPositive();
 }

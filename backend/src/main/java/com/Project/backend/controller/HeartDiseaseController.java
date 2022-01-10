@@ -5,6 +5,7 @@ import com.Project.backend.service.HeartDiseaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.ColumnResult;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -36,6 +37,11 @@ public class HeartDiseaseController {
     @RequestMapping(value = "/age-groups-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getAgeGroupsByHDPositive() {
         return heartDiseaseService.getAgeGroupsByHDPositive();
+    }
+
+    @RequestMapping(value = "/bp-groups-by-hd-positive", method = RequestMethod.GET)
+    public HashMap<String, Double> getBPGroupsByHDPositive() {
+        return heartDiseaseService.getBPGroupsByHDPositive();
     }
 }
 
