@@ -19,31 +19,31 @@ public class HeartDiseaseService {
         this.heartDiseaseRepository = heartDiseaseRepository;
     }
 
-    public ArrayList<Double> averageAge() {
+    public ArrayList<Double> averageAge(Double epsilon) {
         NumericResult res = new NumericResult();
         double age = heartDiseaseRepository.getAverageAge();
         ArrayList<Double> result = new ArrayList<>();
         result.add(age);
         res.setContent(result);
-        res.addLaplaceNoise(1.0, 1.0);
+        res.addLaplaceNoise(1.0, epsilon);
         res.round(2);
 
         return res.getContent();
     }
 
-    public ArrayList<Double> getNumRecordsBySex(String sex) {
+    public ArrayList<Double> getNumRecordsBySex(String sex, Double epsilon) {
         NumericResult res = new NumericResult();
         Double count = heartDiseaseRepository.getNumRecordsBySex(sex);
         ArrayList<Double> result = new ArrayList<>();
         result.add(count);
         res.setContent(result);
-        res.addLaplaceNoise(1.0, 1.0);
+        res.addLaplaceNoise(1.0, epsilon);
         res.round(2);
 
         return res.getContent();
     }
 
-    public HashMap<String, Double> getChestPainTypeByHDPositive() {
+    public HashMap<String, Double> getChestPainTypeByHDPositive(Double epsilon) {
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> types = new ArrayList<>();
@@ -56,7 +56,7 @@ public class HeartDiseaseService {
         }
 
         res.setContent(values);
-        res.addLaplaceNoise(1.0, 1.0);
+        res.addLaplaceNoise(1.0, epsilon);
         res.round(2);
 
         HashMap<String, Double> finalResult = new HashMap<>();
@@ -67,7 +67,7 @@ public class HeartDiseaseService {
         return finalResult;
     }
 
-    public HashMap<String, Double> getAgeGroupsByHDPositive() {
+    public HashMap<String, Double> getAgeGroupsByHDPositive(Double epsilon) {
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();
@@ -80,7 +80,7 @@ public class HeartDiseaseService {
         }
 
         res.setContent(counts);
-        res.addLaplaceNoise(1.0, 1.0);
+        res.addLaplaceNoise(1.0, epsilon);
         res.round(2);
 
         HashMap<String, Double> finalResult = new HashMap<>();
@@ -91,7 +91,7 @@ public class HeartDiseaseService {
         return finalResult;
     }
 
-    public HashMap<String, Double> getBPGroupsByHDPositive() {
+    public HashMap<String, Double> getBPGroupsByHDPositive(Double epsilon) {
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();
@@ -104,7 +104,7 @@ public class HeartDiseaseService {
         }
 
         res.setContent(counts);
-        res.addLaplaceNoise(1.0, 1.0);
+        res.addLaplaceNoise(1.0, epsilon);
         res.round(2);
 
         HashMap<String, Double> finalResult = new HashMap<>();
