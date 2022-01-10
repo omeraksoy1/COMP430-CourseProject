@@ -40,5 +40,10 @@ public class HeartDiseaseController {
     public HashMap<String, Double> getBPGroupsByHDPositive(@RequestBody Double epsilon) {
         return heartDiseaseService.getBPGroupsByHDPositive(epsilon);
     }
+
+    @RequestMapping(value = "/st-slope-groups-by-hd-positive", method = RequestMethod.GET)
+    public HashMap<String, Double> getSTSlopeGroupsByHDPositive(@RequestBody Double epsilon) {
+        return heartDiseaseService.getSTSlopeGroupsByHDPositive(epsilon);
+    }
 }
 

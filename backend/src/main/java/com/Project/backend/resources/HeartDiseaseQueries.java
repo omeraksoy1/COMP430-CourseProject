@@ -13,7 +13,7 @@ public class HeartDiseaseQueries {
                                 "when Age between 70 and 75 then '70-75' when Age between 75 and 80 then '75-80' " +
                                 "end AS `Range`, count(1) AS `Count` FROM heartdisease " +
                                 "GROUP BY `Range` ORDER BY `Range` asc;";
-    public static final String BPGroupByHDPositiveQuery = "SELECT case " +
+    public static final String BPGroupsByHDPositiveQuery = "SELECT case " +
                                 "when RestingBP between 70 and 80 then '70-80' when RestingBP between 80 and 90 then '80-90' " +
                                 "when RestingBP between 90 and 100 then '90-100' when RestingBP between 100 and 110 then '100-110' " +
                                 "when RestingBP between 110 and 120 then '110-120' when RestingBP between 120 and 130 then '120-130' " +
@@ -22,5 +22,7 @@ public class HeartDiseaseQueries {
                                 "when RestingBP between 170 and 180 then '170-180' when RestingBP between 180 and 190 then '180-190' " +
                                 "when RestingBP between 190 and 200 then '190-200' else 'Unknown' end AS `Range`, " +
                                 "count(1) AS `Count` FROM heartdisease GROUP BY `Range` ORDER BY `Range` asc;";
+    public static final String STSlopeGroupsByHDPositiveQuery = "SELECT ST_slope, COUNT(*) FROM heartdisease " +
+                                                                "WHERE HeartDisease = 1 GROUP BY ST_slope;";
 
 }
