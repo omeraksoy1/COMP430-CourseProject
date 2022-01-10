@@ -1,6 +1,7 @@
 package com.Project.backend.resources;
 
-import java.security.SecureRandom;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import org.apache.commons.math3.distribution.LaplaceDistribution;
 import org.apache.commons.math3.distribution.NormalDistribution;
@@ -25,7 +26,7 @@ public class NumericResult {
         this.content = content;
     }
 
-    public ArrayList<Double> addLaplaceNoise(double sensitivity, double epsilon) {
+    public void addLaplaceNoise(double sensitivity, double epsilon) {
 
         ArrayList<Double> perturbed = new ArrayList<Double>();
         LaplaceDistribution laplaceDistribution = new LaplaceDistribution(0, sensitivity / epsilon);
@@ -37,7 +38,7 @@ public class NumericResult {
             perturbed.add(i,(Double) this.content.get(i) + noise[i]);
         }
 
-        return perturbed;
+        this.setContent(perturbed);
 
     }
 
@@ -61,4 +62,16 @@ public class NumericResult {
 
         return perturbed;
     }
+
+    public void round(int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        for (int i = 0; i < this.content.size(); i++) {
+            BigDecimal bd = BigDecimal.valueOf(this.getContent().get(i));
+            bd = bd.setScale(places, RoundingMode.HALF_UP);
+
+            this.getContent().set(i, bd.doubleValue());
+        }
+    }
+
 }

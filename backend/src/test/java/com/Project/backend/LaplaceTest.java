@@ -16,10 +16,10 @@ public class LaplaceTest {
         ArrayList<Double> content = new ArrayList<>(Arrays.asList(12.4, 10.2, 22.1, 9.9, 18.2, 26.2));
 
         NumericResult result = new NumericResult(content);
-        ArrayList<Double> perturbed = result.addLaplaceNoise(sensitivity, epsilon);
+        result.addLaplaceNoise(sensitivity, epsilon);
 
-        for (int i = 0; i < perturbed.size(); i++) {
-            System.out.println(perturbed.get(i));
+        for (int i = 0; i < result.getContent().size(); i++) {
+            System.out.println(result.getContent().get(i));
         }
     }
 
