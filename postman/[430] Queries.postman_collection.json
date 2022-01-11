@@ -6,280 +6,365 @@
 	},
 	"item": [
 		{
-			"name": "average age",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "heartdisease",
+			"item": [
+				{
+					"name": "average age",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/average-age",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"average-age"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{domain}}/api/average-age",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"average-age"
-					]
+				{
+					"name": "get num HD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/get-num-records-by-sex?sex=M",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"get-num-records-by-sex"
+							],
+							"query": [
+								{
+									"key": "sex",
+									"value": "M"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chestpaintype",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/get-chest-pain-type-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"get-chest-pain-type-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get age groups HD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/age-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"age-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get BP groups HD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/bp-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"bp-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ST slope groups HD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/st-slope-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"st-slope-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cholesterol groups HD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/cholesterol-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"cholesterol-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get resting ECG groups HD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/resting-ecg-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"resting-ecg-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get max HR groups HD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/max-hr-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"max-hr-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get exercise angina groups HD",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db1/exercise-angina-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db1",
+								"exercise-angina-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "get num HD",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "1",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "heartdiseasepredict",
+			"item": [
+				{
+					"name": "average age",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/average-age",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"average-age"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/api/get-num-records-by-sex?sex=M",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"get-num-records-by-sex"
-					],
-					"query": [
-						{
-							"key": "sex",
-							"value": "M"
-						}
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "get chestpaintype",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "1",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/api/get-chest-pain-type-by-hd-positive",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"get-chest-pain-type-by-hd-positive"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get age groups HD",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "1",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/api/age-groups-by-hd-positive",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"age-groups-by-hd-positive"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get BP groups HD",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "1",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/api/bp-groups-by-hd-positive",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"bp-groups-by-hd-positive"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get ST slope groups HD",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "1",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/api/st-slope-groups-by-hd-positive",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"st-slope-groups-by-hd-positive"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get cholesterol groups HD",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "1",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/api/cholesterol-groups-by-hd-positive",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"cholesterol-groups-by-hd-positive"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get resting ECG groups HD",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "1",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/api/resting-ecg-groups-by-hd-positive",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"resting-ecg-groups-by-hd-positive"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get max HR groups HD",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "1",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{domain}}/api/max-hr-groups-by-hd-positive",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"api",
-						"max-hr-groups-by-hd-positive"
-					]
-				}
-			},
-			"response": []
+			"name": "farmingham",
+			"item": []
 		}
 	]
 }
