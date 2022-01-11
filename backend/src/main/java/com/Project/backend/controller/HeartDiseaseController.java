@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 @CrossOrigin
 @RestController // This means that this class is a Controller
-@RequestMapping("/api")
+@RequestMapping("/api/db1")
 public class HeartDiseaseController {
     @Autowired
     private HeartDiseaseService heartDiseaseService;
@@ -57,6 +57,11 @@ public class HeartDiseaseController {
     @RequestMapping(value = "/max-hr-groups-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getMaxHRGroupsByHDPositive(@RequestBody Double epsilon) {
         return heartDiseaseService.getMaxHRGroupsByHDPositive(epsilon);
+    }
+
+    @RequestMapping(value = "/exercise-angina-groups-by-hd-positive", method = RequestMethod.GET)
+    public HashMap<String, Double> getExerciseAnginaGroupsByHDPositive(@RequestBody Double epsilon) {
+        return heartDiseaseService.getExerciseAnginaGroupsByHDPositive(epsilon);
     }
 }
 

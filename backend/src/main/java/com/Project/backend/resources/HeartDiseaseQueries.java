@@ -43,4 +43,6 @@ public class HeartDiseaseQueries {
                                 "when MaxHR between 170 and 180 then '170-180' when MaxHR between 180 and 190 then '180-190' " +
                                 "else '190+' end AS `Range`, COUNT(1) AS `Count` FROM heartdisease " +
                                 "WHERE HeartDisease = 1 GROUP BY `Range` ORDER BY `Range` asc;";
+    public static final String ExerciseAnginaGroupsByHDPositiveQuery = "SELECT ExerciseAngina, COUNT(*) FROM heartdisease " +
+                                                                        "WHERE HeartDisease = 1 GROUP BY ExerciseAngina;                                  ";
 }

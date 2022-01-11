@@ -38,4 +38,7 @@ public interface HeartDiseaseRepository extends JpaRepository<heartDisease, Inte
 
     @Query(value = HeartDiseaseQueries.MaxHRGroupsByHDPositiveQuery, nativeQuery = true)
     ArrayList<String[]> getMaxHRGroupsByHDPositive();
+
+    @Query(value = HeartDiseaseQueries.ExerciseAnginaGroupsByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getExerciseAnginaGroupsByHDPositive();
 }
