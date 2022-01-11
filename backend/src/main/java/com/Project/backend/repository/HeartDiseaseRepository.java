@@ -32,4 +32,7 @@ public interface HeartDiseaseRepository extends JpaRepository<heartDisease, Inte
 
     @Query(value = HeartDiseaseQueries.CholesterolGroupsByHDPositiveQuery, nativeQuery = true)
     ArrayList<String[]> getCholesterolGroupsByHDPositive();
+
+    @Query(value = HeartDiseaseQueries.RestingECGGroupsByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getRestingECGGroupsByHDPositive();
 }

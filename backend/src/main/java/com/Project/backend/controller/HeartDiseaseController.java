@@ -50,5 +50,10 @@ public class HeartDiseaseController {
     public HashMap<String, Double> getCholesterolGroupsByHDPositive(@RequestBody Double epsilon) {
         return heartDiseaseService.getCholesterolGroupsByHDPositive(epsilon);
     }
+
+    @RequestMapping(value = "/resting-ecg-groups-by-hd-positive", method = RequestMethod.GET)
+    public HashMap<String, Double> getRestingECGGroupsByHDPositive(@RequestBody Double epsilon) {
+        return heartDiseaseService.getRestingECGGroupsByHDPositive(epsilon);
+    }
 }
 

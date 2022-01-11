@@ -25,7 +25,6 @@ public class HeartDiseaseQueries {
                                 "COUNT(1) AS `Count` FROM heartdisease WHERE HeartDisease = 1 GROUP BY `Range` ORDER BY `Range` asc;";
     public static final String STSlopeGroupsByHDPositiveQuery = "SELECT ST_slope, COUNT(*) FROM heartdisease " +
                                                                 "WHERE HeartDisease = 1 GROUP BY ST_slope;";
-
     public static final String CholesterolGroupsByHDPositiveQuery = "SELECT case when Cholesterol between 0 and 100 then '0-100' " +
                                 "when Cholesterol between 100 and 200 then '100-200' " +
                                 "when Cholesterol between 200 and 300 then '200-300' " +
@@ -33,4 +32,6 @@ public class HeartDiseaseQueries {
                                 "else '400+' end AS `Range`, COUNT(1) AS `Count` " +
                                 "FROM heartdisease WHERE HeartDisease = 1 " +
                                 "GROUP BY `Range` ORDER BY `Range` asc;";
+    public static final String RestingECGGroupsByHDPositiveQuery = "SELECT restingECG, COUNT(*) FROM heartdisease " +
+                                "WHERE HeartDisease = 1 GROUP BY restingECG ORDER BY RestingECG asc;";
 }
