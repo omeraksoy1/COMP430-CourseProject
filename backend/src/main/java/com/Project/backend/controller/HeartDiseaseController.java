@@ -1,11 +1,9 @@
 package com.Project.backend.controller;
 
-import com.Project.backend.resources.SingleColumn;
 import com.Project.backend.service.HeartDiseaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.ColumnResult;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -54,6 +52,11 @@ public class HeartDiseaseController {
     @RequestMapping(value = "/resting-ecg-groups-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getRestingECGGroupsByHDPositive(@RequestBody Double epsilon) {
         return heartDiseaseService.getRestingECGGroupsByHDPositive(epsilon);
+    }
+
+    @RequestMapping(value = "/max-hr-groups-by-hd-positive", method = RequestMethod.GET)
+    public HashMap<String, Double> getMaxHRGroupsByHDPositive(@RequestBody Double epsilon) {
+        return heartDiseaseService.getMaxHRGroupsByHDPositive(epsilon);
     }
 }
 

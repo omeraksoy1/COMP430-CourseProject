@@ -34,4 +34,13 @@ public class HeartDiseaseQueries {
                                 "GROUP BY `Range` ORDER BY `Range` asc;";
     public static final String RestingECGGroupsByHDPositiveQuery = "SELECT restingECG, COUNT(*) FROM heartdisease " +
                                 "WHERE HeartDisease = 1 GROUP BY restingECG ORDER BY RestingECG asc;";
+    public static final String MaxHRGroupsByHDPositiveQuery = "SELECT case when MaxHR between 60 and 70 then '60-70' " +
+                                "when MaxHR between 70 and 80 then '70-80' when MaxHR between 80 and 90 then '80-90' " +
+                                "when MaxHR between 90 and 100 then '90-100' when MaxHR between 100 and 110 then '100-110' " +
+                                "when MaxHR between 110 and 120 then '110-120' when MaxHR between 120 and 130 then '120-130' " +
+                                "when MaxHR between 130 and 140 then '130-140' when MaxHR between 140 and 150 then '140-150' " +
+                                "when MaxHR between 150 and 160 then '150-160' when MaxHR between 160 and 170 then '160-170' " +
+                                "when MaxHR between 170 and 180 then '170-180' when MaxHR between 180 and 190 then '180-190' " +
+                                "else '190+' end AS `Range`, COUNT(1) AS `Count` FROM heartdisease " +
+                                "WHERE HeartDisease = 1 GROUP BY `Range` ORDER BY `Range` asc;";
 }
