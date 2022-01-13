@@ -3,8 +3,8 @@ package com.Project.backend.resources;
 public class HeartDiseaseQueries {
 
     public static final String AverageAgeQuery = "SELECT AVG(age) FROM heartdisease;";
-    public static final String NumRecordsBySexQuery = "SELECT COUNT(*) FROM heartdisease h WHERE h.Sex = :sex;";
-    public static final String ChestPainTypeByHDPositiveQuery = "SELECT COUNT(*), ChestPainType FROM heartdisease h " +
+    public static final String NumRecordsBySexQuery = "SELECT sex, COUNT(*) FROM heartdisease GROUP BY sex;";
+    public static final String ChestPainTypeByHDPositiveQuery = "SELECT ChestPainType, COUNT(*) FROM heartdisease h " +
                                                                 "WHERE h.HeartDisease = 1 GROUP BY ChestPainType;";
     public static final String AgeGroupsByHDPositiveQuery = "SELECT case when Age between 25 and 30 then '25-30' " +
                                 "when Age between 30 and 35 then '30-35' when Age between 35 and 40 then '35-40' " +
