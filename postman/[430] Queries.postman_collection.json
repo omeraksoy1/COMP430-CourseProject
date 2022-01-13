@@ -40,7 +40,7 @@
 					"response": []
 				},
 				{
-					"name": "get num HD",
+					"name": "get gender groups",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -57,20 +57,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{domain}}/api/db1/get-num-records-by-sex?sex=M",
+							"raw": "{{domain}}/api/db1/num-records-by-sex",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"api",
 								"db1",
-								"get-num-records-by-sex"
-							],
-							"query": [
-								{
-									"key": "sex",
-									"value": "M"
-								}
+								"num-records-by-sex"
 							]
 						}
 					},
@@ -94,14 +88,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{domain}}/api/db1/get-chest-pain-type-by-hd-positive",
+							"raw": "{{domain}}/api/db1/chest-pain-type-by-hd-positive",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"api",
 								"db1",
-								"get-chest-pain-type-by-hd-positive"
+								"chest-pain-type-by-hd-positive"
 							]
 						}
 					},
@@ -355,6 +349,99 @@
 								"api",
 								"db2",
 								"average-age"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get gender groups",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/num-records-by-sex",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"num-records-by-sex"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get education groups HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/education-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"education-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get smoker status HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/current-smoker-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"current-smoker-by-hd-positive"
 							]
 						}
 					},
