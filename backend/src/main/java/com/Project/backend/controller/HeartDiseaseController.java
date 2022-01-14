@@ -19,12 +19,12 @@ public class HeartDiseaseController {
         return heartDiseaseService.averageAge(epsilon);
     }
 
-    @RequestMapping(value = "/get-num-records-by-sex", method = RequestMethod.GET)
-    public ArrayList<Double> getNumHDbySex (@RequestParam String sex, @RequestBody Double epsilon) {
-        return heartDiseaseService.getNumRecordsBySex(sex, epsilon);
+    @RequestMapping(value = "/num-records-by-sex", method = RequestMethod.GET)
+    public HashMap<String, Double> getNumHDbySex (@RequestBody Double epsilon) {
+        return heartDiseaseService.getNumRecordsBySex(epsilon);
     }
 
-    @RequestMapping(value = "/get-chest-pain-type-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/chest-pain-type-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getChestPainTypeByHDPositive(@RequestBody Double epsilon) {
         return heartDiseaseService.getChestPainTypeByHDPositive(epsilon);
     }
