@@ -44,5 +44,5 @@ public class HeartDiseaseQueries {
                                 "else '190+' end AS `Range`, COUNT(1) AS `Count` FROM heartdisease " +
                                 "WHERE HeartDisease = 1 GROUP BY `Range` ORDER BY `Range` asc;";
     public static final String ExerciseAnginaGroupsByHDPositiveQuery = "SELECT ExerciseAngina, COUNT(*) FROM heartdisease " +
-                                                                        "WHERE HeartDisease = 1 GROUP BY ExerciseAngina;                                  ";
+                                                                        "WHERE HeartDisease = 1 GROUP BY ExerciseAngina;";
 }
