@@ -1,0 +1,29 @@
+.newbutton {
+    display: inline-block;
+    background:goldenrod ;
+
+      font-size:larger;
+      font-weight: bold;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        ;
+
+   }
+   .example-additional-selection {
+
+    opacity: 0.75;
+    font-size: 0.75em;
+
+  }
+
+  .mat-form-field {
+    width: 80%;
+
+  }
+
+  .submitbutton {
+       width: 180px;
+       height: 50px;
+       margin: 0 auto;
+       display: block;
+
+      }

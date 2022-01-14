@@ -2,3 +2,34 @@
 .tp-button-row a {
    margin-right: 8px;
 }
+
+.button1 {
+     display: inline-block;
+     background:cornflowerblue ;
+        width: 180px;
+        height: 90px;
+        margin-left: 220px;
+        font-size: large;
+       font-weight: bold;
+       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         ;
+
+    }
+    .button2 {background:cornflowerblue ;
+      width: 180px;
+      height: 90px;
+     margin-left: 10px;
+     font-size: large;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      ;}
+    .button3 {background:cornflowerblue ;
+      width: 180px;
+      height: 90px;
+        margin-left: 10px;
+        font-size: large;
+        font-weight: bold;
+         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         ;
+
+    }

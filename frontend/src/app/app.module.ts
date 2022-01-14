@@ -5,16 +5,30 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from './button/button.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule } from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import { HeaderComponent } from './header/header.component';
+import { QueryComponent } from './query/query.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {TextFieldModule} from '@angular/cdk/text-field';
 
+const MaterialComponents= [MatButtonModule];
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent
+    ButtonComponent,
+    HeaderComponent,
+    QueryComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialComponents,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TextFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
