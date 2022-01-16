@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { QueryComponent } from './query/query.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TextFieldModule} from '@angular/cdk/text-field';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 const MaterialComponents= [MatButtonModule];
 @NgModule({
@@ -28,7 +30,8 @@ const MaterialComponents= [MatButtonModule];
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    TextFieldModule
+    TextFieldModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

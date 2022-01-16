@@ -2,20 +2,142 @@
 <p></p>
 <br>
 <br>
+<div #database1 style="display: none;">
+
+
+  <mat-form-field appearance="fill">
+  <mat-label>Select a query</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option value="1">AVERAGE AGE</mat-option>
+    <mat-option value="2">NUMBER OF RECORDS BY SEX</mat-option>
+    <mat-option value="3">CHEST PAIN TYPE BY HD POSITIVE</mat-option>
+    <mat-option value="4">AGE GROUPS BY HD POSITIVE</mat-option>
+    <mat-option value="5">BP GROUPS BY HD POSITIVE</mat-option>
+    <mat-option value="6">ST SLOPE GROUPS BY HD POSITIVE</mat-option>
+    <mat-option value="7">CHOLESTEROL GROUPS BY HD POSITIVE</mat-option>
+    <mat-option value="8">RESTING ECG GROUPS BY HD POSITIVE</mat-option>
+    <mat-option value="9">MAX HR GROUPS BY HD POSITIVE</mat-option>
+    <mat-option value="10">EXERCISE ANGINA GROUPS BY HD POSITIVE</mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <!--<div class="example-label-container" [class]="vertical ? 'example-label-vertical' : 'example-label-horizontal'">-->
+  &nbsp;
+  <label id="example-name-label" class="example-name-label"><i>Epsilon: </i></label>
+
+  <label class="example-value-label"><i>{{value}}</i></label>
+
+ <!-- </div>-->
+  <mat-slider
+    class="example-margin"
+    [disabled]="disabled"
+    [invert]="invert"
+    [max]="max"
+    [min]="min"
+    [step]="step"
+    [thumbLabel]="thumbLabel"
+    [tickInterval]="getSliderTickInterval()"
+    [(ngModel)]="value"
+    [vertical]="vertical"
+    aria-labelledby="example-name-label">
+  </mat-slider>
+
+</div>
+<div #database2 style="display: none;">
+  <mat-form-field appearance="fill">
+    <mat-label>Select a query</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option value="11">AVERAGE AGE</mat-option>
+      <mat-option value="12">NUMBER OF RECORDS BY SEX</mat-option>
+      <mat-option value="13">EDUCATION GROUPS BY HD POSITIVE</mat-option>
+      <mat-option value="14">CURRENT SMOKER BY HD POSITIVE</mat-option>
+    </mat-select>
+  </mat-form-field>
+  &nbsp;
+  <label id="example-name-label" class="example-name-label"><i>Epsilon: </i></label>
+
+  <label class="example-value-label"><i>{{value}}</i></label>
+
+  <!-- </div>-->
+  <mat-slider
+    class="example-margin"
+    [disabled]="disabled"
+    [invert]="invert"
+    [max]="max"
+    [min]="min"
+    [step]="step"
+    [thumbLabel]="thumbLabel"
+    [tickInterval]="getSliderTickInterval()"
+    [(ngModel)]="value"
+    [vertical]="vertical"
+    aria-labelledby="example-name-label">
+  </mat-slider>
+</div>
+<div #database3 style="display: none;">
+  <mat-form-field appearance="fill">
+    <mat-label>Select a query</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option value="15">Option 1</mat-option>
+      <mat-option value="16">Option 2</mat-option>
+      <mat-option value="17">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+  &nbsp;
+  <label id="example-name-label" class="example-name-label"><i>Epsilon: </i></label>
+
+  <label class="example-value-label"><i>{{value}}</i></label>
+
+  <!-- </div>-->
+  <mat-slider
+    class="example-margin"
+    [disabled]="disabled"
+    [invert]="invert"
+    [max]="max"
+    [min]="min"
+    [step]="step"
+    [thumbLabel]="thumbLabel"
+    [tickInterval]="getSliderTickInterval()"
+    [(ngModel)]="value"
+    [vertical]="vertical"
+    aria-labelledby="example-name-label">
+  </mat-slider>
+</div>
+<!--<div id="cont2" style = "display:none">
 <mat-form-field appearance="fill">
   <mat-label>Select an option</mat-label>
   <mat-select >
-    <mat-option value="1">Option 1</mat-option>
+    <mat-option value="1">BOption 1</mat-option>
     <mat-option value="2">Option 2</mat-option>
     <mat-option value="3">Option 3</mat-option>
   </mat-select>
 </mat-form-field>
+</div>
+<div id="cont3" style = "display:none">
+<mat-form-field appearance="fill">
+  <mat-label>Select an option</mat-label>
+  <mat-select >
+    <mat-option value="1">COption 1</mat-option>
+    <mat-option value="2">Option 2</mat-option>
+    <mat-option value="3">Option 3</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>-->
+
+
 <p></p>
 <br>
 
 
 <button mat-raised-button (click)="getAll()" class="submitbutton">Submit</button>
-<h1>Result: {{result}}</h1>
+
+
+<h1 class="fontclass">BUDGET: {{budget}}</h1>
+<br>
+<h1 class="fontclass">RESULT: {{result}}</h1>
+
+<!--<div *ngFor="let item of result | keyvalue">
+  Key: <b>{{result.key}}</b> and Value: <b>{{result.value}}</b>
+</div>-->
 <!--<mat-form-field appearance="fill">
   <mat-label>Autosize textarea</mat-label>
   <textarea matInput
@@ -24,3 +146,5 @@
             cdkAutosizeMinRows="1"
             cdkAutosizeMaxRows="5"></textarea>
 </mat-form-field>-->
+
+

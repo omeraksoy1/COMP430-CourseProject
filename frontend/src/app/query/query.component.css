@@ -15,9 +15,14 @@
 
   }
 
-  .mat-form-field {
-    width: 80%;
 
+
+   .mat-form-field {
+       width: 78%;
+   }
+
+  .example-full-width {
+    width: 100%;
   }
 
   .submitbutton {
@@ -25,5 +30,37 @@
        height: 50px;
        margin: 0 auto;
        display: block;
+       font-size: large;
+       font-weight: bold;
+       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
 
-      }
+   .example-margin {
+     margin: 8;
+     color: black;
+     width: 100px;
+
+   }
+
+  .example-result-card .example-label-container.example-label-horizontal {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 12px 16px;
+    max-width: 284px;
+    font-size: large;
+           font-weight: bold;
+           font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .example-result-card .example-value-label {
+    font-weight: 600;
+    font-size: large;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+   .fontclass {
+       font-size: xlarge;
+       font-weight: bold;
+       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
