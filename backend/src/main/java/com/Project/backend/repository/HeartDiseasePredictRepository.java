@@ -21,4 +21,25 @@ public interface HeartDiseasePredictRepository extends JpaRepository<heartDiseas
 
     @Query(value = HeartDiseasePredictQueries.CurrentSmokerByHDPositiveQuery, nativeQuery = true)
     ArrayList<String[]> getCurrentSmokerByHDPositive();
+
+    @Query(value = HeartDiseasePredictQueries.CigsPerDayGroupsByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getCigsPerDayGroupsByHDPositive();
+
+    @Query(value = HeartDiseasePredictQueries.BPMedsGroupsByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getBPMedsGroupsByHDPositive();
+
+    @Query(value = HeartDiseasePredictQueries.PrevalentStrokeByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getPrevalentStrokeByHDPositive();
+
+    @Query(value = HeartDiseasePredictQueries.PrevalentHypertensionBinaryByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getPrevalentHypertensionBinaryByHDPositive();
+
+    @Query(value = HeartDiseasePredictQueries.DiabetesByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getDiabetesByHDPositive();
+
+    @Query(value = HeartDiseasePredictQueries.CholesterolGroupsByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getCholesterolGroupsByHDPositive();
+
+    @Query(value = HeartDiseasePredictQueries.BMIGroupsByHDPositiveQuery, nativeQuery = true)
+    ArrayList<String[]> getBMIGroupsByHDPositive();
 }

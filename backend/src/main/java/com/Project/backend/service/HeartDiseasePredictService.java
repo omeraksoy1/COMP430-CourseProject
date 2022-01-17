@@ -101,4 +101,172 @@ public class HeartDiseasePredictService {
 
         return finalResult;
     }
+
+    public HashMap<String, Double> getCigsPerDayGroupsByHDPositive(Double epsilon) {
+        NumericResult res = new NumericResult();
+        ArrayList<String[]> result;
+        ArrayList<String> types = new ArrayList<>();
+        ArrayList<Double> counts = new ArrayList<>();
+        result = heartDiseasePredictRepository.getCigsPerDayGroupsByHDPositive();
+
+        for (String[] strings : result) {
+            types.add(strings[0]);
+            counts.add(Double.parseDouble(strings[1]));
+        }
+
+        res.setContent(counts);
+        res.addLaplaceNoise(1.0, epsilon);
+        res.round(2);
+
+        HashMap<String, Double> finalResult = new HashMap<>();
+        for (int j = 0; j < counts.size(); j++) {
+            finalResult.put(types.get(j), res.getContent().get(j));
+        }
+
+        return finalResult;
+    }
+
+    public HashMap<String, Double> getBPMedsGroupsByHDPositive(Double epsilon) {
+        NumericResult res = new NumericResult();
+        ArrayList<String[]> result;
+        ArrayList<String> types = new ArrayList<>();
+        ArrayList<Double> counts = new ArrayList<>();
+        result = heartDiseasePredictRepository.getBPMedsGroupsByHDPositive();
+
+        for (String[] strings : result) {
+            types.add(strings[0]);
+            counts.add(Double.parseDouble(strings[1]));
+        }
+
+        res.setContent(counts);
+        res.addLaplaceNoise(1.0, epsilon);
+        res.round(2);
+
+        HashMap<String, Double> finalResult = new HashMap<>();
+        for (int j = 0; j < counts.size(); j++) {
+            finalResult.put(types.get(j), res.getContent().get(j));
+        }
+
+        return finalResult;
+    }
+
+    public HashMap<String, Double> getPrevalentStrokeByHDPositive(Double epsilon) {
+        NumericResult res = new NumericResult();
+        ArrayList<String[]> result;
+        ArrayList<String> types = new ArrayList<>();
+        ArrayList<Double> counts = new ArrayList<>();
+        result = heartDiseasePredictRepository.getPrevalentStrokeByHDPositive();
+
+        for (String[] strings : result) {
+            types.add(strings[0]);
+            counts.add(Double.parseDouble(strings[1]));
+        }
+
+        res.setContent(counts);
+        res.addLaplaceNoise(1.0, epsilon);
+        res.round(2);
+
+        HashMap<String, Double> finalResult = new HashMap<>();
+        for (int j = 0; j < counts.size(); j++) {
+            finalResult.put(types.get(j), res.getContent().get(j));
+        }
+
+        return finalResult;
+    }
+
+    public HashMap<String, Double> getPrevalentHypertensionBinaryByHDPositive(Double epsilon) {
+        NumericResult res = new NumericResult();
+        ArrayList<String[]> result;
+        ArrayList<String> types = new ArrayList<>();
+        ArrayList<Double> counts = new ArrayList<>();
+        result = heartDiseasePredictRepository.getPrevalentHypertensionBinaryByHDPositive();
+
+        for (String[] strings : result) {
+            types.add(strings[0]);
+            counts.add(Double.parseDouble(strings[1]));
+        }
+
+        res.setContent(counts);
+        res.addLaplaceNoise(1.0, epsilon);
+        res.round(2);
+
+        HashMap<String, Double> finalResult = new HashMap<>();
+        for (int j = 0; j < counts.size(); j++) {
+            finalResult.put(types.get(j), res.getContent().get(j));
+        }
+
+        return finalResult;
+    }
+
+    public HashMap<String, Double> getDiabetesByHDPositive(Double epsilon) {
+        NumericResult res = new NumericResult();
+        ArrayList<String[]> result;
+        ArrayList<String> types = new ArrayList<>();
+        ArrayList<Double> counts = new ArrayList<>();
+        result = heartDiseasePredictRepository.getDiabetesByHDPositive();
+
+        for (String[] strings : result) {
+            types.add(strings[0]);
+            counts.add(Double.parseDouble(strings[1]));
+        }
+
+        res.setContent(counts);
+        res.addLaplaceNoise(1.0, epsilon);
+        res.round(2);
+
+        HashMap<String, Double> finalResult = new HashMap<>();
+        for (int j = 0; j < counts.size(); j++) {
+            finalResult.put(types.get(j), res.getContent().get(j));
+        }
+
+        return finalResult;
+    }
+
+    public HashMap<String, Double> getCholesterolGroupsByHDPositive(Double epsilon) {
+        NumericResult res = new NumericResult();
+        ArrayList<String[]> result;
+        ArrayList<String> types = new ArrayList<>();
+        ArrayList<Double> counts = new ArrayList<>();
+        result = heartDiseasePredictRepository.getCholesterolGroupsByHDPositive();
+
+        for (String[] strings : result) {
+            types.add(strings[0]);
+            counts.add(Double.parseDouble(strings[1]));
+        }
+
+        res.setContent(counts);
+        res.addLaplaceNoise(1.0, epsilon);
+        res.round(2);
+
+        HashMap<String, Double> finalResult = new HashMap<>();
+        for (int j = 0; j < counts.size(); j++) {
+            finalResult.put(types.get(j), res.getContent().get(j));
+        }
+
+        return finalResult;
+    }
+
+    public HashMap<String, Double> getBMIGroupsByHDPositive(Double epsilon) {
+        NumericResult res = new NumericResult();
+        ArrayList<String[]> result;
+        ArrayList<String> types = new ArrayList<>();
+        ArrayList<Double> counts = new ArrayList<>();
+        result = heartDiseasePredictRepository.getBMIGroupsByHDPositive();
+
+        for (String[] strings : result) {
+            types.add(strings[0]);
+            counts.add(Double.parseDouble(strings[1]));
+        }
+
+        res.setContent(counts);
+        res.addLaplaceNoise(1.0, epsilon);
+        res.round(2);
+
+        HashMap<String, Double> finalResult = new HashMap<>();
+        for (int j = 0; j < counts.size(); j++) {
+            finalResult.put(types.get(j), res.getContent().get(j));
+        }
+
+        return finalResult;
+    }
 }
