@@ -446,6 +446,223 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get cigs per day HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/cigs-per-day-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"cigs-per-day-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get bp med groups HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/bp-meds-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"bp-meds-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prevalent stroke HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/prevalent-stroke-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"prevalent-stroke-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prevalent hypertension HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/prevalent-hypertension-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"prevalent-hypertension-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "diabetes HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/diabetes-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"diabetes-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cholesterol HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/cholesterol-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"cholesterol-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BMI groups HDP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db2/bmi-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db2",
+								"bmi-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
