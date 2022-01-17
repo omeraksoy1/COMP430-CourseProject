@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController // This means that this class is a Controller
 @RequestMapping("/api/db1")
 public class HeartDiseaseController {
@@ -53,7 +53,6 @@ public class HeartDiseaseController {
     public HashMap<String, Double> getRestingECGGroupsByHDPositive(@RequestBody Double epsilon) {
         return heartDiseaseService.getRestingECGGroupsByHDPositive(epsilon);
     }
-
     @RequestMapping(value = "/max-hr-groups-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getMaxHRGroupsByHDPositive(@RequestBody Double epsilon) {
         return heartDiseaseService.getMaxHRGroupsByHDPositive(epsilon);
