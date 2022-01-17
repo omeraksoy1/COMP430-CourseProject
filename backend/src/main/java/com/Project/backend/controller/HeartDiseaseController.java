@@ -16,6 +16,7 @@ public class HeartDiseaseController {
 
     @RequestMapping(value = "/average-age", method = RequestMethod.GET)
     public ArrayList<Double> getAverageAge (@RequestBody Double epsilon) {
+
         return heartDiseaseService.averageAge(epsilon);
     }
 

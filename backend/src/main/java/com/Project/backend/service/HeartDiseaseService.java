@@ -5,12 +5,15 @@ import com.Project.backend.resources.NumericResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 @Service
 public class HeartDiseaseService {
     private final HeartDiseaseRepository heartDiseaseRepository;
+    @Resource(name = "bean1")
+    BudgetService budgetService;
 
     @Autowired
     public HeartDiseaseService(HeartDiseaseRepository heartDiseaseRepository){
@@ -18,6 +21,8 @@ public class HeartDiseaseService {
     }
 
     public ArrayList<Double> averageAge(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
+
         NumericResult res = new NumericResult();
         double age = heartDiseaseRepository.getAverageAge();
         ArrayList<Double> result = new ArrayList<>();
@@ -30,6 +35,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getNumRecordsBySex(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> types = new ArrayList<>();
@@ -54,6 +60,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getChestPainTypeByHDPositive(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> types = new ArrayList<>();
@@ -78,6 +85,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getAgeGroupsByHDPositive(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();
@@ -102,6 +110,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getBPGroupsByHDPositive(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();
@@ -126,6 +135,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getSTSlopeGroupsByHDPositive(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();
@@ -150,6 +160,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getCholesterolGroupsByHDPositive(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();
@@ -174,6 +185,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getRestingECGGroupsByHDPositive(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();
@@ -198,6 +210,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getMaxHRGroupsByHDPositive(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();
@@ -222,6 +235,7 @@ public class HeartDiseaseService {
     }
 
     public HashMap<String, Double> getExerciseAnginaGroupsByHDPositive(Double epsilon) {
+        budgetService.decrementBudget(epsilon);
         NumericResult res = new NumericResult();
         ArrayList<String[]> result;
         ArrayList<String> ranges = new ArrayList<>();

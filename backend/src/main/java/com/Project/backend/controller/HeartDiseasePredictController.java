@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController // This means that this class is a Controller
 @RequestMapping("/api/db2")
 
