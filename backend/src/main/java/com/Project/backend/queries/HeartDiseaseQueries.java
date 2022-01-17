@@ -1,4 +1,4 @@
-package com.Project.backend.resources;
+package com.Project.backend.queries;
 
 public class HeartDiseaseQueries {
 

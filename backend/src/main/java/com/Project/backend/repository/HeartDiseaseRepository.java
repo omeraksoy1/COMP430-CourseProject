@@ -1,7 +1,7 @@
 package com.Project.backend.repository;
 
 import com.Project.backend.model.heartDisease;
-import com.Project.backend.resources.HeartDiseaseQueries;
+import com.Project.backend.queries.HeartDiseaseQueries;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
