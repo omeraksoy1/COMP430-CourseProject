@@ -35,37 +35,37 @@ public class HeartDiseasePredictController {
         return heartDiseasePredictService.getCurrentSmokerByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/num-records-by-sex", method = RequestMethod.GET)
+    @RequestMapping(value = "/cigs-per-day-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getCigsPerDayGroupsByHDPositive (@RequestBody Double epsilon) {
         return heartDiseasePredictService.getCigsPerDayGroupsByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/education-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/bp-meds-groups-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getBPMedsGroupsByHDPositive (@RequestBody Double epsilon) {
         return heartDiseasePredictService.getBPMedsGroupsByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/current-smoker-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/prevalent-stroke-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getPrevalentStrokeByHDPositive (@RequestBody Double epsilon) {
         return heartDiseasePredictService.getPrevalentStrokeByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/num-records-by-sex", method = RequestMethod.GET)
+    @RequestMapping(value = "/prevalent-hypertension-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getPrevalentHypertensionBinaryByHDPositive (@RequestBody Double epsilon) {
         return heartDiseasePredictService.getPrevalentHypertensionBinaryByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/education-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/diabetes-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getDiabetesByHDPositive (@RequestBody Double epsilon) {
         return heartDiseasePredictService.getDiabetesByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/current-smoker-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/cholesterol-groups-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getCholesterolGroupsByHDPositive (@RequestBody Double epsilon) {
         return heartDiseasePredictService.getCholesterolGroupsByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/current-smoker-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/bmi-groups-by-hd-positive", method = RequestMethod.GET)
     public HashMap<String, Double> getBMIGroupsByHDPositive (@RequestBody Double epsilon) {
         return heartDiseasePredictService.getBMIGroupsByHDPositive(epsilon);
     }
