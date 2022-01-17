@@ -20,9 +20,8 @@ public class heartDiseasePredict {
     private Integer totChol;
     private Integer sysBP;
     private Integer diaBP;
-    private Integer BMI;
+    private Double BMI;
     private Integer heartRate;
     private Integer glucose;
     private Integer TenYearCHD;
-
 }

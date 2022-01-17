@@ -1,10 +1,10 @@
 package com.Project.backend.resources;
 
+import org.apache.commons.math3.distribution.LaplaceDistribution;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
-import org.apache.commons.math3.distribution.LaplaceDistribution;
-import org.apache.commons.math3.distribution.NormalDistribution;
 
 
 public class NumericResult {

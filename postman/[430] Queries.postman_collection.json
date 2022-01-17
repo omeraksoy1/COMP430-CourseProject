@@ -668,7 +668,380 @@
 		},
 		{
 			"name": "farmingham",
-			"item": []
+			"item": [
+				{
+					"name": "high bp HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/high-bp-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"high-bp-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "high chol HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/high-chol-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"high-chol-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BMI groups HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/bmi-groups-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"bmi-groups-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "smoker HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/smoker-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"smoker-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stroke HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/stroke-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"stroke-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "diabetes HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/diabetes-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"diabetes-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "physical activity HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/physical-activity-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"physical-activity-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fruits HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/fruits-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"fruits-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "veggies HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/veggies-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"veggies-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "heavy alcohol HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/heavy-alcohol-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"heavy-alcohol-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "any healthcare HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/any-healthcare-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"any-healthcare-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "no doc b/c cost HDI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "1",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/db3/no-doc-cost-by-hd-positive",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"db3",
+								"no-doc-cost-by-hd-positive"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

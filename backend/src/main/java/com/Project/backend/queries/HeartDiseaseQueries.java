@@ -1,7 +1,6 @@
 package com.Project.backend.queries;
 
 public class HeartDiseaseQueries {
-
     public static final String AverageAgeQuery = "SELECT AVG(age) FROM heartdisease;";
     public static final String NumRecordsBySexQuery = "SELECT sex, COUNT(*) FROM heartdisease GROUP BY sex;";
     public static final String ChestPainTypeByHDPositiveQuery = "SELECT ChestPainType, COUNT(*) FROM heartdisease h " +
