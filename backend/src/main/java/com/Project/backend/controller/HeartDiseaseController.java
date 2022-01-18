@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -18,6 +17,7 @@ import java.util.HashMap;
 public class HeartDiseaseController {
     @Autowired
     private HeartDiseaseService heartDiseaseService;
+
     @Autowired
     private BudgetService budgetService;
 
@@ -43,7 +43,7 @@ public class HeartDiseaseController {
         return heartDiseaseService.getNumRecordsBySex(epsilon);
     }
 
-    @RequestMapping(value = "/chest-pain-type-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/chest-pain-type-by-hd-positive", method = RequestMethod.POST)
     public HashMap<String, Double> getChestPainTypeByHDPositive(@RequestHeader("Authorization") String token, @RequestBody Double epsilon) {
         String authToken = token.substring("Basic".length()).trim();
         try {
@@ -54,7 +54,7 @@ public class HeartDiseaseController {
         return heartDiseaseService.getChestPainTypeByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/age-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/age-groups-by-hd-positive", method = RequestMethod.POST)
     public HashMap<String, Double> getAgeGroupsByHDPositive(@RequestHeader("Authorization") String token, @RequestBody Double epsilon) {
         String authToken = token.substring("Basic".length()).trim();
         try {
@@ -65,7 +65,7 @@ public class HeartDiseaseController {
         return heartDiseaseService.getAgeGroupsByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/bp-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/bp-groups-by-hd-positive", method = RequestMethod.POST)
     public HashMap<String, Double> getBPGroupsByHDPositive(@RequestHeader("Authorization") String token, @RequestBody Double epsilon) {
         String authToken = token.substring("Basic".length()).trim();
         try {
@@ -76,7 +76,7 @@ public class HeartDiseaseController {
         return heartDiseaseService.getBPGroupsByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/st-slope-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/st-slope-groups-by-hd-positive", method = RequestMethod.POST)
     public HashMap<String, Double> getSTSlopeGroupsByHDPositive(@RequestHeader("Authorization") String token, @RequestBody Double epsilon) {
         String authToken = token.substring("Basic".length()).trim();
         try {
@@ -87,7 +87,7 @@ public class HeartDiseaseController {
         return heartDiseaseService.getSTSlopeGroupsByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/cholesterol-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/cholesterol-groups-by-hd-positive", method = RequestMethod.POST)
     public HashMap<String, Double> getCholesterolGroupsByHDPositive(@RequestHeader("Authorization") String token, @RequestBody Double epsilon) {
         String authToken = token.substring("Basic".length()).trim();
         try {
@@ -98,7 +98,7 @@ public class HeartDiseaseController {
         return heartDiseaseService.getCholesterolGroupsByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/resting-ecg-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/resting-ecg-groups-by-hd-positive", method = RequestMethod.POST)
     public HashMap<String, Double> getRestingECGGroupsByHDPositive(@RequestHeader("Authorization") String token, @RequestBody Double epsilon) {
         String authToken = token.substring("Basic".length()).trim();
         try {
@@ -108,7 +108,7 @@ public class HeartDiseaseController {
         }
         return heartDiseaseService.getRestingECGGroupsByHDPositive(epsilon);
     }
-    @RequestMapping(value = "/max-hr-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/max-hr-groups-by-hd-positive", method = RequestMethod.POST)
     public HashMap<String, Double> getMaxHRGroupsByHDPositive(@RequestHeader("Authorization") String token, @RequestBody Double epsilon) {
         String authToken = token.substring("Basic".length()).trim();
         try {
@@ -119,7 +119,7 @@ public class HeartDiseaseController {
         return heartDiseaseService.getMaxHRGroupsByHDPositive(epsilon);
     }
 
-    @RequestMapping(value = "/exercise-angina-groups-by-hd-positive", method = RequestMethod.GET)
+    @RequestMapping(value = "/exercise-angina-groups-by-hd-positive", method = RequestMethod.POST)
     public HashMap<String, Double> getExerciseAnginaGroupsByHDPositive(@RequestHeader("Authorization") String token, @RequestBody Double epsilon) {
         String authToken = token.substring("Basic".length()).trim();
         try {
