@@ -51,6 +51,14 @@
       <mat-option value="12">NUMBER OF RECORDS BY SEX</mat-option>
       <mat-option value="13">EDUCATION GROUPS BY HD POSITIVE</mat-option>
       <mat-option value="14">CURRENT SMOKER BY HD POSITIVE</mat-option>
+      <mat-option value="15">CIGARETTES PER DAY BY HD POSITIVE</mat-option>
+      <mat-option value="16">BP MEDS GROUPS BY HD POSITIVE</mat-option>
+      <mat-option value="17">PREVALENT STROKE BY HD POSITIVE</mat-option>
+      <mat-option value="18">PREVALENT HYPERTENSION BY HD POSITIVE</mat-option>
+      <mat-option value="19">DIABETES BY HD POSITIVE</mat-option>
+      <mat-option value="20">CHOLESTEROL GROUPS BY HD POSITIVE</mat-option>
+      <mat-option value="21">BMI GROUPS BY HD POSITIVE</mat-option>
+
     </mat-select>
   </mat-form-field>
   &nbsp;
@@ -77,9 +85,19 @@
   <mat-form-field appearance="fill">
     <mat-label>Select a query</mat-label>
     <mat-select [(value)]="selected">
-      <mat-option value="15">Option 1</mat-option>
-      <mat-option value="16">Option 2</mat-option>
-      <mat-option value="17">Option 3</mat-option>
+      <mat-option value="22">HIGH BP BY HD POSITIVE</mat-option>
+      <mat-option value="23">HIGH CHOLESTEROL BY HD POSITIVE</mat-option>
+      <mat-option value="24">BMI GROUPS BY HD POSITIVE</mat-option>
+      <mat-option value="25">SMOKER BY HD POSITIVE</mat-option>
+      <mat-option value="26">STROKE BY HD POSITIVE</mat-option>
+      <mat-option value="27">DIABETES BY HD POSITIVE</mat-option>
+      <mat-option value="28">PHYSICAL ACTIVITY BY HD POSITIVE</mat-option>
+      <mat-option value="29">FRUITS BY HD POSITIVE</mat-option>
+      <mat-option value="30">VEGGIES BY HD POSITIVE</mat-option>
+      <mat-option value="31">HEAVY ALCOHOL CONSUMPTION BY HD POSITIVE</mat-option>
+      <mat-option value="32">ANY HEALTHCARE BY HD POSITIVE</mat-option>
+      <mat-option value="33">NO DOCTOR COST BY HD POSITIVE</mat-option>
+
     </mat-select>
   </mat-form-field>
   &nbsp;
@@ -134,6 +152,33 @@
 <h1 class="fontclass">BUDGET: {{budget}}</h1>
 <br>
 <h1 class="fontclass">RESULT: {{result}}</h1>
+
+<!--<div style="display: block">
+  <canvas mdbChart
+          [chartType]="chartType"
+          [datasets]="chartDatasets"
+          [labels]="chartLabels"
+          [colors]="chartColors"
+          [options]="chartOptions"
+          [legend]="true"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+  </canvas>
+</div>-->
+<br>
+<div #chart class="chart-wrapper" style="display: none;">
+  <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+  </canvas>
+</div>
+
+
+
 
 <!--<div *ngFor="let item of result | keyvalue">
   Key: <b>{{result.key}}</b> and Value: <b>{{result.value}}</b>

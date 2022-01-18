@@ -12,6 +12,8 @@ import { QueryComponent } from './query/query.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TextFieldModule} from '@angular/cdk/text-field';
 import {MatSliderModule} from '@angular/material/slider';
+import { ChartsModule } from 'ng2-charts';
+
 
 
 const MaterialComponents= [MatButtonModule];
@@ -20,7 +22,8 @@ const MaterialComponents= [MatButtonModule];
     AppComponent,
     ButtonComponent,
     HeaderComponent,
-    QueryComponent
+    QueryComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ const MaterialComponents= [MatButtonModule];
     FormsModule,
     ReactiveFormsModule,
     TextFieldModule,
-    MatSliderModule
+    MatSliderModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
