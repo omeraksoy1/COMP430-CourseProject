@@ -6,9 +6,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BudgetService {
-    private Double budget;
-    public BudgetService(){
-        this.budget =100d;
+
+    private final UserRepository userRepository;
+
+    @Autowired
+    public BudgetService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public void decrementBudget(String token, Double epsilon) throws OutOfBudgetException {

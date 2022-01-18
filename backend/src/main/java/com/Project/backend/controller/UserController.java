@@ -1,12 +1,12 @@
 package com.Project.backend.controller;
 
-
 import com.Project.backend.resources.OutOfBudgetException;
 import com.Project.backend.service.BudgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.Base64;
 
 @RestController // This means that this class is a Controller
