@@ -4,7 +4,7 @@ public class HeartDiseaseQueries {
     public static final String AverageAgeQuery = "SELECT AVG(age) FROM heartdisease;";
     public static final String NumRecordsBySexQuery = "SELECT sex, COUNT(*) FROM heartdisease GROUP BY sex;";
     public static final String ChestPainTypeByHDPositiveQuery = "SELECT ChestPainType, COUNT(*) FROM heartdisease h " +
-                                                                "WHERE h.HeartDisease = 1 GROUP BY ChestPainType;";
+                                                                "WHERE h.HeartDisease = 1 GROUP BY ChestPainType ORDER BY ChestPainType;";
     public static final String AgeGroupsByHDPositiveQuery = "SELECT case when Age between 25 and 30 then '25-30' " +
                                 "when Age between 30 and 35 then '30-35' when Age between 35 and 40 then '35-40' " +
                                 "when Age between 40 and 45 then '40-45' when Age between 45 and 50 then '45-50' " +
