@@ -1,0 +1,30 @@
+
+<div class="center">
+    <h1>Login Page</h1>
+    <form name="form"  (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter Your Email</mat-label>
+                <input matInput placeholder="pat@example.com" type="text"
+                name="username" [(ngModel)]="model.username"
+                    #username="ngModel" required />   
+            </mat-form-field>
+        </div>
+        <div [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter Your Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'"  name="password" [(ngModel)]="model.password"
+                #password="ngModel" required >
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                
+            </mat-form-field>
+        </div>
+                <button mat-raised-button   class="button" type="submit"  >Login</button>     
+
+    </form>
+    <h1>{{output}}</h1>
+
+    
+</div>

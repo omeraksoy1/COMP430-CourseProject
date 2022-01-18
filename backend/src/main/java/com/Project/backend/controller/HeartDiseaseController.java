@@ -14,13 +14,14 @@ public class HeartDiseaseController {
     @Autowired
     private HeartDiseaseService heartDiseaseService;
 
-    @RequestMapping(value = "/average-age", method = RequestMethod.GET)
+    @RequestMapping(value = "/average-age", method = RequestMethod.POST)
     public ArrayList<Double> getAverageAge (@RequestBody Double epsilon) {
+        System.out.println("giriyo");
 
         return heartDiseaseService.averageAge(epsilon);
     }
 
-    @RequestMapping(value = "/num-records-by-sex", method = RequestMethod.GET)
+    @RequestMapping(value = "/num-records-by-sex", method = RequestMethod.POST)
     public HashMap<String, Double> getNumHDbySex (@RequestBody Double epsilon) {
         return heartDiseaseService.getNumRecordsBySex(epsilon);
     }
