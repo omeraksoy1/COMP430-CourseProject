@@ -25,7 +25,6 @@ public class UserController {
         String[] info = new String(Base64.getDecoder()
                 .decode(authToken)).split(":");
 
-
         if(info[0].equals("a") && info[1].equals("a")) {
             return true;
         }else{ return false;}
