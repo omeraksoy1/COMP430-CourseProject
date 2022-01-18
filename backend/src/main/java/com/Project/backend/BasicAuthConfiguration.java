@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configurers.provisioning.InMemoryUserDetailsManagerConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -49,9 +50,13 @@ public class BasicAuthConfiguration
     public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception
     {
-        auth.inMemoryAuthentication()
-                .withUser("a")
-                .password("{noop}a")
-                .roles("USER");
+        InMemoryUserDetailsManagerConfigurer imudmc = auth.inMemoryAuthentication();
+        String[] username = {"a","berkut","omer","mert","oykum"};
+        String[] password = {"{noop}a","{noop}comp443","{noop}comp430","{noop}angular","{noop}batuhan"};
+
+        for (int i = 0; i < username.length; i++) {
+            imudmc.withUser(username[i]).password(password[i]).roles("USER");
+        }
+
     }
 }

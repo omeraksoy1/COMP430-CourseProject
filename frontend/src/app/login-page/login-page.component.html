@@ -4,8 +4,8 @@
     <form name="form"  (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
         <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
             <mat-form-field appearance="fill">
-                <mat-label>Enter Your Email</mat-label>
-                <input matInput placeholder="pat@example.com" type="text"
+                <mat-label>Enter Your Username</mat-label>
+                <input matInput placeholder="e.g. peter" type="text"
                 name="username" [(ngModel)]="model.username"
                     #username="ngModel" required />   
             </mat-form-field>

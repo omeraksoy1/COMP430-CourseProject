@@ -127,28 +127,13 @@ export class QueryComponent implements OnInit {
 
   }
 
-  /*parseObject(obj: any)
-  {
-     for(var key in obj)
-     {
-        console.log("key: " + key + ", value: " + obj[key])
-        if(obj[key] instanceof Object)
-        {
-          this.parseObject(obj[key]);
-        }
-     }
-  }*/
 
   getAll() {
-            /*this.http.get(this.url).subscribe((results) => {
-              console.log('Data is received - Result - ', results);
-              this.result = results;
-            })*/
-            /*this.http.post<any>(this.url, 1).subscribe(data => {
-                       this.result = data;
-            })*/
+   
             this.result = "";
 
+
+            
             if(this.budget <=0)
             {
                     this.result = "Not enough budget!";
@@ -170,7 +155,7 @@ export class QueryComponent implements OnInit {
                                      this.result = data;
                                      this.ch.nativeElement.style.display="none";
 
-                })
+                },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "2")
             {
@@ -199,7 +184,7 @@ export class QueryComponent implements OnInit {
 
 
 
-                                        })
+                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
 
             }
             else if(this.selected == "3")
@@ -229,7 +214,7 @@ export class QueryComponent implements OnInit {
 
 
 
-                })
+                },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "4")
             {
@@ -258,7 +243,7 @@ export class QueryComponent implements OnInit {
 
 
 
-                                       })
+                                       },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
 
             }
             else if(this.selected == "5")
@@ -292,7 +277,7 @@ export class QueryComponent implements OnInit {
 
 
 
-                                                       })
+                                                       },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "6")
             {
@@ -321,7 +306,7 @@ export class QueryComponent implements OnInit {
 
 
 
-                                                                                                                                   })
+                                                                                                                                   },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "7")
             {
@@ -350,7 +335,7 @@ export class QueryComponent implements OnInit {
 
 
 
-                                                                                                                                      })
+                                                                                                                                      },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "8")
             {
@@ -379,7 +364,7 @@ export class QueryComponent implements OnInit {
 
 
 
-                                                                                                                                      })
+                                                                                                                                      },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "9")
             {
@@ -415,7 +400,7 @@ const ordered = Object.keys(response.body).sort().reduce(
 
 
 
-                })
+                },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
 
             }
             else if(this.selected == "10")
@@ -445,7 +430,7 @@ const ordered = Object.keys(response.body).sort().reduce(
 
 
 
-                                })
+                                },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "11")
             {
@@ -455,7 +440,7 @@ const ordered = Object.keys(response.body).sort().reduce(
                                                                                             this.budget = data;});
                                                                                                                     this.result = data;
                                                                                                                     this.ch.nativeElement.style.display="none";
-                                                                                               })
+                                                                                               },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "12")
             {
@@ -484,7 +469,7 @@ const ordered = Object.keys(response.body).sort().reduce(
 
 
 
-                                                                       })
+                                                                       },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "13")
             {
@@ -513,7 +498,7 @@ const ordered = Object.keys(response.body).sort().reduce(
 
 
 
-                                                       })
+                                                       },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "14")
             {
@@ -542,7 +527,7 @@ const ordered = Object.keys(response.body).sort().reduce(
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "15")
                         {
@@ -571,7 +556,7 @@ const ordered = Object.keys(response.body).sort().reduce(
 
 
 
-                                                                    })
+                                                                    },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
                         }
 else if(this.selected == "16")
             {
@@ -600,7 +585,7 @@ else if(this.selected == "16")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
             else if(this.selected == "17")
                         {
@@ -629,7 +614,7 @@ else if(this.selected == "16")
 
 
 
-                                                                    })
+                                                                    },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
                         }
            else if(this.selected == "18")
                        {
@@ -659,7 +644,7 @@ else if(this.selected == "16")
 
 
 
-                                                                   })
+                                                                   },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
                        }
 else if(this.selected == "19")
             {
@@ -688,7 +673,7 @@ else if(this.selected == "19")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "20")
             {
@@ -717,7 +702,7 @@ else if(this.selected == "20")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "21")
             {
@@ -746,7 +731,7 @@ else if(this.selected == "21")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "22")
             {
@@ -775,7 +760,7 @@ else if(this.selected == "22")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "23")
             {
@@ -804,7 +789,7 @@ else if(this.selected == "23")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "24")
             {
@@ -834,7 +819,7 @@ else if(this.selected == "24")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "25")
             {
@@ -863,7 +848,7 @@ else if(this.selected == "25")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "26")
             {
@@ -892,7 +877,7 @@ else if(this.selected == "26")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "27")
             {
@@ -921,7 +906,7 @@ else if(this.selected == "27")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "28")
             {
@@ -950,7 +935,7 @@ else if(this.selected == "28")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "29")
             {
@@ -979,7 +964,7 @@ else if(this.selected == "29")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "30")
             {
@@ -1008,7 +993,7 @@ else if(this.selected == "30")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "31")
             {
@@ -1037,7 +1022,7 @@ else if(this.selected == "31")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "32")
             {
@@ -1066,7 +1051,7 @@ else if(this.selected == "32")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 else if(this.selected == "33")
             {
@@ -1096,7 +1081,7 @@ else if(this.selected == "33")
 
 
 
-                                                        })
+                                                        },error=>{this.result = "Not enough budget! Your budget is " + this.budget +". Ask admin to give you more budget."})
             }
 
 
