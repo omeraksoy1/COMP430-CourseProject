@@ -1,6 +1,7 @@
 package com.Project.backend;
 
 import com.Project.backend.service.BudgetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,9 +19,5 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
-	@Bean(name = "bean1")
-	public BudgetService budgetService(){
-		return new BudgetService();
-	}
 
 }

@@ -1,6 +1,9 @@
 package com.Project.backend.controller;
 
 
+import com.Project.backend.resources.OutOfBudgetException;
+import com.Project.backend.service.BudgetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +13,11 @@ import java.util.Base64;
 @RequestMapping("/api")
 @CrossOrigin
 public class UserController {
-    @RequestMapping(value= "/login", method = RequestMethod.GET)
+
+    @Autowired
+    private BudgetService budgetService;
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public boolean login(HttpServletRequest request) {
         System.out.println("giriyo");
         String authToken = request.getHeader("Authorization")
@@ -24,4 +31,13 @@ public class UserController {
         }else{ return false;}
 
     }
+
+    @RequestMapping(value = "/budget/get", method = RequestMethod.GET)
+    public Double getBudget(HttpServletRequest request) {
+        String authToken = request.getHeader("Authorization")
+                .substring("Basic".length()).trim();
+
+        return budgetService.getBudget(authToken);
+    }
+
 }
