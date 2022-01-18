@@ -86,7 +86,6 @@ export class QueryComponent implements OnInit {
     tickInterval = 1;
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:8080/api/db1/average-age';
-    this.budget = 15;
   }
 
   getSliderTickInterval(): number | 'auto' {
@@ -120,6 +119,10 @@ export class QueryComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+      this.budget = data;
+})
+
   }
 
   /*parseObject(obj: any)
@@ -143,13 +146,19 @@ export class QueryComponent implements OnInit {
                        this.result = data;
             })*/
             this.result = "";
-            if(this.budget < 0 || this.budget - this.value <0)
+            if(this.budget <=0)
             {
                     this.result = "Not enough budget!";
             }
             else
             {
-            this.budget -= this.value;
+
+            this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                   this.budget = data;
+                                   this.ch.nativeElement.style.display="none";
+
+              })
+          
             if(this.selected == "1")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/average-age", this.value).subscribe(data => {
