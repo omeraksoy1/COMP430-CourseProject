@@ -73,7 +73,8 @@ export class QueryComponent implements OnInit {
   public result:any;
   public budget: any;
   @Input() childMessage = '';
-  autoTicks = true;
+  @Input() matInput = '';
+  /*autoTicks = true;
     disabled = false;
     invert = false;
     max = 15;
@@ -83,18 +84,19 @@ export class QueryComponent implements OnInit {
     thumbLabel = true;
     value = 5;
     vertical = false;
-    tickInterval = 1;
+    tickInterval = 1;*/
+    value = 5;
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:8080/api/db1/average-age';
   }
 
-  getSliderTickInterval(): number | 'auto' {
+  /*getSliderTickInterval(): number | 'auto' {
         if (this.showTicks) {
           return this.autoTicks ? 'auto' : this.tickInterval;
         }
 
         return 0;
-      }
+      }*/
 
   ngOnChanges(): void {
        if(this.childMessage=="Database1")
@@ -146,6 +148,7 @@ export class QueryComponent implements OnInit {
                        this.result = data;
             })*/
             this.result = "";
+
             if(this.budget <=0)
             {
                     this.result = "Not enough budget!";
@@ -155,21 +158,27 @@ export class QueryComponent implements OnInit {
 
             this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
                                    this.budget = data;
-                                   this.ch.nativeElement.style.display="none";
 
-              })
-          
+
+            })
+            }
             if(this.selected == "1")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/average-age", this.value).subscribe(data => {
+                                     this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                            this.budget = data;});
                                      this.result = data;
                                      this.ch.nativeElement.style.display="none";
+
                 })
             }
             else if(this.selected == "2")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/num-records-by-sex", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                  (obj : any, key : any) => {
                                                                                    obj[key] = response.body[key];
                                                                                    return obj;
@@ -191,11 +200,15 @@ export class QueryComponent implements OnInit {
 
 
                                         })
+
             }
             else if(this.selected == "3")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/chest-pain-type-by-hd-positive", this.value, { observe: 'response' })
-               .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+               .subscribe(response => {
+                this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                            this.budget = data;});
+                                                                                           const ordered = Object.keys(response.body).sort().reduce(
                                                          (obj : any, key : any) => {
                                                            obj[key] = response.body[key];
                                                            return obj;
@@ -221,7 +234,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "4")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/age-groups-by-hd-positive",this.value, { observe: 'response' })
-                       .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                       .subscribe(response => {
+                       this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                   this.budget = data;});
+                       const ordered = Object.keys(response.body).sort().reduce(
                                                                                 (obj : any, key : any) => {
                                                                                   obj[key] = response.body[key];
                                                                                   return obj;
@@ -248,7 +264,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "5")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/bp-groups-by-hd-positive", this.value, { observe: 'response' })
-                                       .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                                       .subscribe(response => {
+                                       this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                                   this.budget = data;});
+                                       const ordered = Object.keys(response.body).sort().reduce(
                                                                                                 (obj : any, key : any) => {
                                                                                                   obj[key] = response.body[key];
                                                                                                   return obj;
@@ -262,6 +281,10 @@ export class QueryComponent implements OnInit {
                                                                                                   values.push(ordered[i]);
                                                                                                   labels.push(i);
                                                                                               }
+                                                                                              labels.unshift(labels[10]);
+                                                                                              labels.splice(11,1);
+                                                                                              values.unshift(values[10]);
+                                                                                              values.splice(11,1);
                                                                                               this.barChartData = [{ data : values, label: 'Histogram'}];
                                                                                               this.barChartLabels = labels;
                                                                                               this.ch.nativeElement.style.display="block";
@@ -274,7 +297,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "6")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/st-slope-groups-by-hd-positive", this.value, { observe: 'response' })
-                                                                                                                   .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                                                                                                                   .subscribe(response => {
+                                                                                                                   this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                                                                                                               this.budget = data;});
+                                                                                                                   const ordered = Object.keys(response.body).sort().reduce(
                                                                                                                                                                             (obj : any, key : any) => {
                                                                                                                                                                               obj[key] = response.body[key];
                                                                                                                                                                               return obj;
@@ -300,7 +326,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "7")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/cholesterol-groups-by-hd-positive", this.value, { observe: 'response' })
-                                                                                                                      .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                                                                                                                      .subscribe(response => {
+                                                                                                                      this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                                                                                                                  this.budget = data;});
+                                                                                                                      const ordered = Object.keys(response.body).sort().reduce(
                                                                                                                                                                                (obj : any, key : any) => {
                                                                                                                                                                                  obj[key] = response.body[key];
                                                                                                                                                                                  return obj;
@@ -326,7 +355,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "8")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/resting-ecg-groups-by-hd-positive", this.value, { observe: 'response' })
-                                                                                                                      .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                                                                                                                      .subscribe(response => {
+                                                                                                                      this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                                                                                                                  this.budget = data;});
+                                                                                                                      const ordered = Object.keys(response.body).sort().reduce(
                                                                                                                                                                                (obj : any, key : any) => {
                                                                                                                                                                                  obj[key] = response.body[key];
                                                                                                                                                                                  return obj;
@@ -352,7 +384,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "9")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/max-hr-groups-by-hd-positive", this.value, { observe: 'response' })
-.subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+.subscribe(response => {
+this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                            this.budget = data;});
+const ordered = Object.keys(response.body).sort().reduce(
                                                          (obj : any, key : any) => {
                                                            obj[key] = response.body[key];
                                                            return obj;
@@ -366,6 +401,13 @@ export class QueryComponent implements OnInit {
                                                            values.push(ordered[i]);
                                                            labels.push(i);
                                                        }
+                                                       for (let i = 0; i < 4; i++) {
+                                                          labels.unshift(labels[13]);
+                                                          labels.splice(14,1);
+                                                          values.unshift(values[13]);
+                                                          values.splice(14,1);
+                                                       }
+
                                                        this.barChartData = [{ data : values, label: 'Histogram'}];
                                                        this.barChartLabels = labels;
                                                        this.ch.nativeElement.style.display="block";
@@ -379,7 +421,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "10")
             {
                 this.http.post<any>("http://localhost:8080/api/db1/exercise-angina-groups-by-hd-positive", this.value, { observe: 'response' })
-                .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                .subscribe(response => {
+                this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                            this.budget = data;});
+                const ordered = Object.keys(response.body).sort().reduce(
                                                                          (obj : any, key : any) => {
                                                                            obj[key] = response.body[key];
                                                                            return obj;
@@ -406,6 +451,8 @@ export class QueryComponent implements OnInit {
             {
                 console.log(this.selected);
                 this.http.post<any>("http://localhost:8080/api/db2/average-age", this.value).subscribe(data => {
+                this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                            this.budget = data;});
                                                                                                                     this.result = data;
                                                                                                                     this.ch.nativeElement.style.display="none";
                                                                                                })
@@ -413,7 +460,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "12")
             {
                 this.http.post<any>("http://localhost:8080/api/db2/num-records-by-sex", this.value, { observe: 'response' })
-                                       .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                                       .subscribe(response => {
+                                       this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                                   this.budget = data;});
+                                       const ordered = Object.keys(response.body).sort().reduce(
                                                                                                                 (obj : any, key : any) => {
                                                                                                                   obj[key] = response.body[key];
                                                                                                                   return obj;
@@ -439,7 +489,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "13")
             {
                 this.http.post<any>("http://localhost:8080/api/db2/education-groups-by-hd-positive", this.value, { observe: 'response' })
-                       .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                       .subscribe(response => {
+                       this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                   this.budget = data;});
+                       const ordered = Object.keys(response.body).sort().reduce(
                                                                                                 (obj : any, key : any) => {
                                                                                                   obj[key] = response.body[key];
                                                                                                   return obj;
@@ -465,7 +518,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "14")
             {
                 this.http.post<any>("http://localhost:8080/api/db2/current-smoker-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -491,7 +547,10 @@ export class QueryComponent implements OnInit {
             else if(this.selected == "15")
                         {
                             this.http.post<any>("http://localhost:8080/api/db2/cigs-per-day-by-hd-positive", this.value, { observe: 'response' })
-                                    .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                                    .subscribe(response => {
+                                    this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                                this.budget = data;});
+                                    const ordered = Object.keys(response.body).sort().reduce(
                                                                                                              (obj : any, key : any) => {
                                                                                                                obj[key] = response.body[key];
                                                                                                                return obj;
@@ -517,7 +576,10 @@ export class QueryComponent implements OnInit {
 else if(this.selected == "16")
             {
                 this.http.post<any>("http://localhost:8080/api/db2/bp-meds-groups-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -543,7 +605,10 @@ else if(this.selected == "16")
             else if(this.selected == "17")
                         {
                             this.http.post<any>("http://localhost:8080/api/db2/prevalent-stroke-by-hd-positive", this.value, { observe: 'response' })
-                                    .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                                    .subscribe(response => {
+                                    this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                                this.budget = data;});
+                                    const ordered = Object.keys(response.body).sort().reduce(
                                                                                                              (obj : any, key : any) => {
                                                                                                                obj[key] = response.body[key];
                                                                                                                return obj;
@@ -569,7 +634,11 @@ else if(this.selected == "16")
            else if(this.selected == "18")
                        {
                            this.http.post<any>("http://localhost:8080/api/db2/prevalent-hypertension-by-hd-positive", this.value, { observe: 'response' })
-                                   .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                                   .subscribe(response => {
+
+                                   this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                               this.budget = data;});
+                                                                                                               const ordered = Object.keys(response.body).sort().reduce(
                                                                                                             (obj : any, key : any) => {
                                                                                                               obj[key] = response.body[key];
                                                                                                               return obj;
@@ -595,7 +664,10 @@ else if(this.selected == "16")
 else if(this.selected == "19")
             {
                 this.http.post<any>("http://localhost:8080/api/db2/diabetes-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -621,7 +693,10 @@ else if(this.selected == "19")
 else if(this.selected == "20")
             {
                 this.http.post<any>("http://localhost:8080/api/db2/cholesterol-groups-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -647,7 +722,10 @@ else if(this.selected == "20")
 else if(this.selected == "21")
             {
                 this.http.post<any>("http://localhost:8080/api/db2/bmi-groups-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -673,7 +751,10 @@ else if(this.selected == "21")
 else if(this.selected == "22")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/high-bp-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -699,7 +780,10 @@ else if(this.selected == "22")
 else if(this.selected == "23")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/high-chol-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -725,12 +809,16 @@ else if(this.selected == "23")
 else if(this.selected == "24")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/bmi-groups-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
                                                                                                  },
                                                                                                  {}
+
                                                                                                );
                                                                                                //this.result = JSON.stringify(ordered);
                                                                                                var values = [];
@@ -751,7 +839,10 @@ else if(this.selected == "24")
 else if(this.selected == "25")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/smoker-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -777,7 +868,10 @@ else if(this.selected == "25")
 else if(this.selected == "26")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/stroke-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -803,7 +897,10 @@ else if(this.selected == "26")
 else if(this.selected == "27")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/diabetes-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -829,7 +926,10 @@ else if(this.selected == "27")
 else if(this.selected == "28")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/physical-activity-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -855,7 +955,10 @@ else if(this.selected == "28")
 else if(this.selected == "29")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/fruits-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -881,7 +984,10 @@ else if(this.selected == "29")
 else if(this.selected == "30")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/veggies-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -907,7 +1013,10 @@ else if(this.selected == "30")
 else if(this.selected == "31")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/heavy-alcohol-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -933,7 +1042,10 @@ else if(this.selected == "31")
 else if(this.selected == "32")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/any-healthcare-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -959,7 +1071,10 @@ else if(this.selected == "32")
 else if(this.selected == "33")
             {
                 this.http.post<any>("http://localhost:8080/api/db3/no-doc-cost-by-hd-positive", this.value, { observe: 'response' })
-                        .subscribe(response => { const ordered = Object.keys(response.body).sort().reduce(
+                        .subscribe(response => {
+                        this.http.get<any>("http://localhost:8080/api/budget/get").subscribe(data => {
+                                                                                                    this.budget = data;});
+                        const ordered = Object.keys(response.body).sort().reduce(
                                                                                                  (obj : any, key : any) => {
                                                                                                    obj[key] = response.body[key];
                                                                                                    return obj;
@@ -973,6 +1088,7 @@ else if(this.selected == "33")
                                                                                                    values.push(ordered[i]);
                                                                                                    labels.push(i);
                                                                                                }
+
                                                                                                this.barChartData = [{ data : values, label: 'Histogram'}];
                                                                                                this.barChartLabels = labels;
                                                                                                this.ch.nativeElement.style.display="block";
@@ -986,7 +1102,8 @@ else if(this.selected == "33")
 
   }
 
+
   }
 
 
-}
+
